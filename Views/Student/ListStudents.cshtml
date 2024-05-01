@@ -1,0 +1,29 @@
+@model List<Student>;
+
+<h4>Student List</h4>
+<a class="btn btn-primary" href="AddStudent">Add Student</a>
+<hr>
+<table class="table">
+    <thead >
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Age</td>
+            <td>Action</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var i in Model){
+            <tr>
+                <td>@i.Id</td>
+                <td>@i.Name</td>
+                <td>@i.Age</td>
+                <td>
+                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@i.Id">Edit</a>
+                    <a class="btn btn-danger"  asp-action="Delete" asp-route-id="@i.Id" >Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

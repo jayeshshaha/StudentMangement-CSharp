@@ -1,0 +1,16 @@
+@model Student;
+
+<h4>Delete Student</h4>
+<hr>
+<div>
+    <h6>Id:</h6>
+    <p>@Model.Id</p>
+    <h6>Name:</h6>
+    <p>@Model.Name</p>
+    <h6>Age:</h6>
+    <p>@Model.Age</p>
+</div>
+<h5>Are you sure want to delete this ?</h5>
+<form method="post" asp-action="DeleteConfirmed" asp-route-id="@Model.Id">
+    <button class="btn btn-danger">Delete</button>
+</form>
